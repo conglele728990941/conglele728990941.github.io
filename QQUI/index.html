@@ -15,6 +15,14 @@
                 animation: none !important;
                -webkit-animation: none !important;
             }
+            #info-panel{
+                background-color: white;
+            }
+            #self-head{
+                width:3rem;
+                height:3rem;
+            ;
+            }
         </style>
     </head>
     <body>
@@ -23,7 +31,7 @@
         <div class="page page-current" id="msg-page">
             <!--导航条-->
             <header class=" bar bar-nav">
-                <a class="icon icon-me pull-left"></a>
+                <a class="icon icon-me pull-left open-panel" data-panel="#info-panel"></a>
                 <a class="button-link pull-right">+</a>
                 <div id="btn-title" class="buttons-row">
                     <a href="" class="tab-link active button">消息</a>
@@ -106,9 +114,11 @@
                 </div>
             </div>
         </div>
-        <div class=" panel panel-left"id="info-panel">
+        <div class=" panel panel-left panel-reveal" id="info-panel">
             <div class="content-block">
-                <p>这是侧边栏</p>
+                <div id="self-info">
+                    <img src="img/1.jpg" id="self-head" alt="">
+                </div>
             </div>
         </div>
     </div>
