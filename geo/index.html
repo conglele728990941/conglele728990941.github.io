@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<h1>地理位置</h1>
 <p id="latitude"></p>
 <p id="longitude"></p>
 </body>
@@ -13,11 +14,14 @@
 
     var lat = document.getElementById("latitude");
     var lon = document.getElementById("longitude");
-    navigator.geolocation.getCurrentPosition(function (position) {
+    setIntervar(function(){
+        navigator.geolocation.getCurrentPosition(function (position) {
         lat.innerHTML = position.coords.latitude;
         lon.innerHTML = positio.coords.longitude
 
     });
+    },2000)
+    
 </script>
 
 
