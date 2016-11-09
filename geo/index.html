@@ -14,7 +14,7 @@
 
     var lat = document.getElementById("latitude");
     var lon = document.getElementById("longitude");
-    setIntervar(function(){
+    setInterval(function(){
         navigator.geolocation.getCurrentPosition(function (position) {
         lat.innerHTML = position.coords.latitude;
         lon.innerHTML = positio.coords.longitude
