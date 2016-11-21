@@ -1,0 +1,119 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	height: 100%;
+	font-size: 14px;
+	color: #333;
+	background-color: #fff;
+}
+li{
+	list-style:none outside none;
+}
+a{
+	text-decoration: none;
+}
+.clearfix{
+	display: inline-block;
+}
+.header-wrap {
+    background-color: #FFF;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.public-head{
+    height: 100px;
+    width: 1200px !important;
+    margin: 0 auto;
+}
+.public-head .site-logo {
+    width: 180px;
+    height: 60px;
+    float: left;
+    margin: 20px 10px auto 0;
+}
+.public-head .site-logo img{
+	width: 176px;
+	height: 44px;
+}
+.head-left {
+    float: left;
+    margin: 20px 90px 0 10px;
+    position: relative;
+    z-index: 3;
+    width: 195px;
+    height: 60px;
+    background: url(../img/header-left.png) no-repeat left center;
+}
+.public-head .head-right{
+	position: relative;
+	top: 40px;
+	float: right;
+}
+.public-head span a{
+	font-size: 16px;
+	margin-left: 40px;
+	color: black;
+}
+main{
+    background: #e2ebe8;
+    padding: 40px 0px;
+    margin-top: -12px;
+    overflow: hidden;
+}
+.wrapper {
+    width: 1200px;
+    margin: auto;
+}
+.login-con {
+    margin: 0px auto;
+    text-align: center;
+    width: 1200px;
+}
+img{
+	border:medium none;
+	vertical-align: middle;
+}
+.text-left{
+	float: left;
+}
+.text-right{
+	float: right;
+}
+.login-conr{
+	width:700px;
+	height:510px;
+	
+}
+
+.login-conrcon {
+    width: 340px;
+    height: 460px;
+    background: #fff;
+    padding: 0px 40px 0px 40px;
+    text-align: left;
+    margin: 19px auto 0px 101px;
+}
+h2{
+	padding-top:20px ;
+}
+.form1 input{
+	width: 150px;
+	height: 25px;
+	margin-top: 30px;
+	padding-left:5px ;
+}
+.zcBt{
+	position: relative;
+	top: 50px;
+	left: 50px;
+	width: 150px;
+	height: 35px;
+	border: none;
+	background-color: red;
+	border-radius:15px;
+	color: white;
+	font-size: 18px;
+}

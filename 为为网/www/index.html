@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>上海装修网_2016年上海市知名装修网_上海装修建材团购网【为为网】</title>
+		<link rel="stylesheet" href="../css/index.css" />
+	</head>
+
+	<body ng-app="myApp" ng-controller="ctrl">
+		<!--导航-->
+		<nav class="nav-bar">
+			<div class="container_top">
+				<div class="link-look" ng-mouseover="showWeibo()" ng-mouseleave="removeWeibo()">
+					<a class="pull-left link-follow" rel="nofollow">
+						<span class="link-follow-icon"></span> 关注
+						<span class="icon-down"></span>
+					</a>
+					<div class="follow-weibo" style="display:none">
+						<a class="follow-sina" rel="nofollow" href="http://www.weibo.com/homevv" target="_blank" title="为为网官方微博">为为网官方微博</a>
+						<a class="follow-weixin" rel="nofollow">
+							<span>扫一扫 加微信</span>
+							<img src="../img/erweima.gif" />
+						</a>
+					</div>
+				</div>
+				<a class="pull-left mobile-download" rel="nofollow">
+					<span class="mobile-download-icon"></span> 手机客户端
+				</a>
+				<div class="box">
+					<a href="login.html" ng-bind="name"></a>
+					<span>|</span>
+					<a href="regist.html" ng-show="!account">注册</a>
+					<a href="" ng-show="account" ng-click="loginOut()">退出登录</a>
+				</div>
+				<a href="" class="link-my">我的为为</a>
+				<a href="" class="link-cart">购物车(0)</a>
+				<a href="" class="link-collect">收藏夹</a>
+				<a href="" class="link-help">帮助中心</a>
+				<a href="">网站地图</a>
+			</div>
+		</nav>
+		<!--头部-->
+		<header class="header">
+			<div class="container">
+				<div class="box clearfix">
+					<div class="logo pull-left" title="为为网"></div>
+					<div class="search-box">
+						<div class="tab-type">
+							<ul>
+								<li ng-click="tabType($index)" ng-class="{current:bool[$index]}" ng-repeat="item in items" ng-bind="item"></li>
+							</ul>
+						</div>
+						<div class="input-group">
+							<form action="" method="get" class="form1">
+								<input class="form-control pull-left val0" type="text" name="keyWord" value="" />
+								<span class="input-group-btn">
+							<button class="btn btn-default" type="button" onclick="">搜索</button>
+						</span>
+							</form>
+						</div>
+					</div>
+				</div>
+				<ul class="nav">
+					<li header>
+						<a class="homePage" href="">首页</a>
+					</li>
+					<li header ng-repeat="(a,b) in navArr">
+						<a class="homePage" href="">{{a}}</a>
+						<div class="sec-nav">
+							<dl>
+								<dd ng-repeat="c in b">
+									<a href="">{{c}}</a>
+								</dd>
+							</dl>
+						</div>
+					</li>
+				</ul>
+				<div class="app">
+					<div class="app-content" ng-mouseover="showApp()" ng-mouseleave="removeApp()">
+						<a target="_blank" title="随时随地手机为为">
+							<img src="../img/mobile-saomiao.gif" alt="" />
+						</a>
+						<div class="app-down" style="display: none;">
+							<span class="app-download">扫一扫 下载app
+					<img src="../img/app-download.gif" width="108" height="108" />
+					</span>
+							<span class="app-attention">关注为为网微信
+					<img src="../img/erweima.gif" width="108" height="108" />	
+					</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--主体-->
+		<main class="content">
+			<div class="section-banner clearfix">
+				<div class="indexBanner" show-circle>
+					<ul>
+						<li style="display: block;">
+							<a href=""><img src="../img/lunbo1.jpg" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="../img/lunbo2.jpg" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="../img/lunbo3.jpg" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="../img/lunbo4.jpg" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="../img/lunbo5.jpg" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="../img/lunbo6.jpg" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="../img/lunbo7.jpg" alt="" /></a>
+						</li>
+					</ul>
+					<dl class="lun-circle" style="margin-left: -133px;">
+						<dd lb-circle style="background-color:#ffa500;"></dd>
+						<dd lb-circle></dd>
+						<dd lb-circle></dd>
+						<dd lb-circle></dd>
+						<dd lb-circle></dd>
+						<dd lb-circle></dd>
+						<dd lb-circle></dd>
+					</dl>
+					<span ng-click="left()" lb-left class="prev"><i></i></span>
+					<span ng-click="right()" lb-right class="next"><i></i></span>
+				</div>
+				<div class="banner" show-btn>
+					<div class="banner-btn" style="display: none;">
+						<a class="prevBtn" style="opacity: 0.3;" href=""><i></i></a>
+						<a class="nextBtn" style="opacity: 0.3;" href=""><i></i></a>
+					</div>
+					<div class="banner-img">
+						<a href=""><img src="../img/mianbei.jpg" alt="" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="section-mall clearfix">
+				<div class="mall">
+					<h2>家居商城</h2>
+					<div class="tab-mall">
+						<ul>
+							<li ng-class="{current:iscurrent[0]}" ng-mouseover="iscurrent[0]=true;iscurrent[1]=false">
+								<a>家居城</a>
+							</li>
+							<li ng-class="{current:iscurrent[1]}" ng-mouseover="iscurrent[0]=false;iscurrent[1]=true">
+								<a>建材城</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="index-mall clearfix">
+					<div class="mall-type">
+						<dl ng-repeat="(a,b) in mallArr">
+							<dt>
+						<a href="">{{a}}
+							<i>></i>
+						</a>
+					</dt>
+							<dd>
+								<a href="" ng-repeat="c in b">{{c}}</a>
+							</dd>
+						</dl>
+					</div>
+					<div class="mall-img" ng-if="iscurrent[0]">
+						<div class="mall-img-big">
+							<ul>
+								<li>
+									<a href="">
+										<img src="../img/mall1.jpg" alt="" />
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mall-img-middle">
+							<ul>
+								<li>
+									<a href="">
+										<img src="../img/mall-middle1.jpg" alt="" />
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<img src="../img/mall-middle2.jpg" alt="" />
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<img src="../img/mall-middle3.jpg" alt="" />
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<img src="../img/mall-middle4.jpg" alt="" />
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mall-img-small">
+							<ul>
+								<li>
+									<a href=""><img src="../img/mall-small1.jpg" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="../img/mall-small2.jpg" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="../img/mall-small3.jpg" alt="" /></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mall-img" ng-if="iscurrent[1]">
+						<div class="mall-img-big">
+							<ul>
+								<li>
+									<a href="">
+										<img src="../img/mall2.jpg" alt="" />
+									</a>
+								</li>
+							</ul>
+						</div>	
+						<div class="mall-img-middle">
+							<ul>
+								<li>
+									<a href="">
+										<img src="../img/mall-middle5.jpg" alt="" />
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<img src="../img/mall-middle6.jpg" alt="" />
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<img src="../img/mall-middle7.jpg" alt="" />
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<img src="../img/mall-middle8.jpg" alt="" />
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mall-img-small">
+							<ul>
+								<li>
+									<a href=""><img src="../img/mall-small4.jpg" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="../img/mall-small5.jpg" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="../img/mall-small6.jpg" alt="" /></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="section-raidersdiv">
+				<div class="mall">
+					<h2>
+				<a href="">装修攻略</a>
+			</h2>
+				</div>
+				<div class="process-fun">
+					<ul>
+						<li class="top"><span>装修<br />流程</span></li>
+						<li ng-repeat='x in finish' ng-style='x.img'>
+							<a href=""><span ng-bind='x.text'></span></a>
+						</li>
+					</ul>
+				</div>
+				<div class=" hometown clearfix ">
+					<div class="articl pull-left">
+						<div class="tab-article">
+							<ul>
+								<li ng-class="{current:iscurrent1[0]}" ng-mouseover="iscurrent1[0]=true;iscurrent1[1]=false;iscurrent1[2]=false">
+									<a href="">装修知识</a>
+								</li>
+								<li ng-class="{current:iscurrent1[1]}" ng-mouseover="iscurrent1[0]=false;iscurrent1[1]=true;iscurrent1[2]=false">
+									<a href="">装修资讯</a>
+								</li>
+								<li ng-class="{current:iscurrent1[2]}" ng-mouseover="iscurrent1[0]=false;iscurrent1[1]=false;iscurrent1[2]=true">
+									<a href="">装修学堂</a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-content" ng-repeat="(y,x) in article" ng-show='iscurrent1[y]'>
+							<div class="article-img">
+								<ul class="clearfix">
+									<li ng-repeat="h in x.h">
+										<a href="">
+											<img ng-src="{{h.img}}" alt="" />
+											<span ng-bind="h.span"></span>
+										</a>
+										<h3 ng-bind="h.h3"></h3>
+									</li>
+								</ul>
+							</div>
+							<div class="article-text">
+								<ul>
+									<li ng-repeat="d in x.d">
+										<a href="" ng-bind="d"></a>
+									</li>
+								</ul>
+							</div>
+							<div class="article-hot">
+								<ul>
+									<li ng-repeat="f in x.f">
+										<a href="" ng-bind="f"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="activity pull-right">
+						<div class="img">
+							<li>
+								<a href=""><img src="img/zx-article.jpg" alt="" /></a>
+							</li>
+						</div>
+						<div class="cnt">
+							<div class="title">激情十月 微信有礼</div>
+							<h3>
+								1、免费预约停车劵
+								<br />
+								2、精品礼品免费送
+								<br />
+								3、微信群签到，下单立减5%
+								<br />
+								4、满额就送礼
+								</h3>
+							<a class="btn-apply" href=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section-picture">
+				<div class="mall">
+					<h2><a href="">装修效果图</a></h2>
+					<div class="pic-link">
+						<a href="">家居美图</a>
+						<a href="">家居图册</a>
+						<a href="">精品专题</a>
+					</div>
+				</div>
+				<div class="index-picture clearfix">
+					<div class="pic-slider pull-left">
+						<div class="picture">
+							<div class="picture-btn">
+								<a class="prevBtn">
+									<i></i>
+								</a>
+								<a class="nextBtn">
+									<i></i>
+								</a>
+							</div>
+							<ul class="picture-img">
+								<li style="display: block;">
+									<a href=""><img src="../img/lunbo-f1.jpg" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="../img/lunbo-f2.jpg" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="../img/lunbo-f3.jpg" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="../img/lunbo-f4.jpg" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="../img/lunbo-f5.jpg" alt="" /></a>
+								</li>
+							</ul>
+							<ul class="picture-circle">
+								<li><a  style="background: #FFA500;" href=""></a></li>
+								<li><a href=""></a></li>
+								<li><a href=""></a></li>
+								<li><a href=""></a></li>
+								<li><a href=""></a></li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="pic-other pull-right">
+						<div class="pic1">
+							<li><a href=""><img src="../img/pic1.jpg" alt="" /></a></li>
+							<li><a href=""><img src="../img/pic2.jpg" alt="" /></a></li>
+						</div>
+						<div class="pic3">
+						<li><a href=""><img src="../img/pic-3.jpg" alt="" /></a></li>
+						</div>
+					</div>
+				</div>
+				<div class="section-link">
+					<div class="mall">
+						<h2>
+							友情链接
+						</h2>
+					</div>
+					<div class="box-link">
+						<a  ng-repeat="x in links"href="">{{x}}</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer >
+			<a show-top id="gototop" class="gototop"title="返回顶部" rel="nofollow" href="javascript:scroll(0,0)"></a>
+			<div class="link">
+				<a href="">关于我们</a>
+				<span>|</span>
+				<a href="">招商合作</a>
+				<span>|</span>
+				<a href="">联系我们</a>
+				<span>|</span>
+				<a href="">诚聘英才</a>
+				<span>|</span>
+				<a href="">友情链接</a>
+			</div>
+			<div class="icp">
+				免责声明：本网站部分内容由用户自行上传，如权利人发现存在误传其作品情形，请及时与本站联系。
+				<br />
+				沪ICP备08001311号 | 营业执照 
+			</div>
+			<div class="copyright">
+				Copyright © 2008-2016 homevv.com All Rights Reserved
+			</div>
+			<div class="footer-img">
+				<a href="">
+					<img src="../img/f1.jpg" alt="" />
+				</a>
+				<a href="">
+					<img src="../img/f2.jpg" alt="" />
+				</a>
+				<a href="">
+					<img src="../img/f3.jpg" alt="" />
+				</a>
+				<a href="">
+					<img src="../img/f4.jpg" alt="" />
+				</a>
+				<a href="">
+					<img src="../img/f5.jpg" alt="" />
+				</a>
+			</div>
+		</footer>
+	</body>
+	<script src="../libs/jquery.min.js"></script>
+	<script src="../libs/angular.min.js"></script>
+	<script src="../js/index.js"></script>
+	<script src="libs/jquery.cookie.js"></script>
+</html>

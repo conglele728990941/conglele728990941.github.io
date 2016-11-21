@@ -1,0 +1,27 @@
+[
+			{
+				"img":{"backgroundImage": "url(../img/ico-pro-1.gif)"},
+				"text":"验房须知"
+			},{
+				"img":{"backgroundImage": "url(../img/ico-pro-2.gif)"},
+				"text":"前期准备"
+			},{
+				"img":{"backgroundImage": "url(../img/ico-pro-3.gif)"},
+				"text":"设计阶段"
+			},{
+				"img":{"backgroundImage": "url(../img/ico-pro-4.gif)"},
+				"text":"装修选材"
+			},{
+				"img":{"backgroundImage": "url(../img/ico-pro-5.gif)"},
+				"text":"施工阶段"
+			},{
+				"img":{"backgroundImage": "url(../img/ico-pro-6.gif)"},
+				"text":"竣工验收"
+			},{
+				"img":{"backgroundImage": "url(../img/ico-pro-7.gif)"},
+				"text":"软装配饰"
+			},{
+				"img":{"backgroundImage": "url(../img/ico-pro-8.gif)"},
+				"text":"其他"
+			}
+]
